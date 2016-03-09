@@ -1,2 +1,2 @@
 # TestingR
-Scripts from online tutorials an others in the process of learning R
+Scripts from online tutorials, course at UNIL and other sources I gathered in the process of learning R
