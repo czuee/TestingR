@@ -1,0 +1,30 @@
+
+Atomic classes: numeric, logical, character, integer, complex
+
+    Same class      Different classes of elements
+2D   Vector          List
+3D  Matrix           Data frame
+
+Data frame to matrix  : data.matrix()
+
+factors: important for categorized data - gives levels for types of data
+
+missing value : NaN, NA
+
+Names possible for each type
+
+With large amounts of data, it is better to specify the classes with colClasses = "numeric" for example, to run faster
+If you don't know the classes or have columns with different classes, this is a quick dirty tip. 
+Read in the different classes for a fixed number of rows, and ask R to find the type of columns. Then, use the classes to read in all the data
+
+initial <- read.table("database.txt", nrows = 100)
+classes <- sapply(initial, class)
+taball <- read.table("database.txt", colClasses = classes)
+
+apply, lapply[list apply], sapply[vector apply]
+
+rep, mapply[matrix apply]
+
+sweep - for data in different scales
+
+aggregate(x, by, FUN, ..., simplify = TRUE)
