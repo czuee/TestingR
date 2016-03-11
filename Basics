@@ -28,3 +28,8 @@ rep, mapply[matrix apply]
 sweep - for data in different scales
 
 aggregate(x, by, FUN, ..., simplify = TRUE)
+
+dput x dget ... for individual objects
+dump x source  ...for multiple objects
+
+complete.cases: to remove missing values or rows with missing values NA from a vector/matrix...
