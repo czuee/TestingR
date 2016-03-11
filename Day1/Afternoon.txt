@@ -1,0 +1,828 @@
+
+R version 3.1.1 (2014-07-10) -- "Sock it to Me"
+Copyright (C) 2014 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin13.1.0 (64-bit)
+
+R est un logiciel libre livré sans AUCUNE GARANTIE.
+Vous pouvez le redistribuer sous certaines conditions.
+Tapez 'license()' ou 'licence()' pour plus de détails.
+
+R est un projet collaboratif avec de nombreux contributeurs.
+Tapez 'contributors()' pour plus d'information et
+'citation()' pour la façon de le citer dans les publications.
+
+Tapez 'demo()' pour des démonstrations, 'help()' pour l'aide
+en ligne ou 'help.start()' pour obtenir l'aide au format HTML.
+Tapez 'q()' pour quitter R.
+
+[R.app GUI 1.65 (6784) x86_64-apple-darwin13.1.0]
+
+[History restored from /Users/admin/.Rapp.history]
+
+> ls()
+character(0)
+> x.vector<-c(5.1,6.3,7.8,9.3,10.5)
+> x.vector
+[1]  5.1  6.3  7.8  9.3 10.5
+> 1/x.vector
+[1] 0.1960784 0.1587302 0.1282051 0.1075269 0.0952381
+> 1/x.vector->inv.x.vector
+> x.vector*inv.x.vector
+[1] 1 1 1 1 1
+> y.vector<-c(1.3,3.4,8.1,3.6,5.7)
+> x.vector+y.vector
+[1]  6.4  9.7 15.9 12.9 16.2
+> x2<-c(1,2)
+> y6<-c(1,2,3,4,5,6)
+> x2+y6
+[1] 2 4 4 6 6 8
+> range(x.vector)
+[1]  5.1 10.5
+> prod(y6)
+[1] 720
+> prod(x2)
+[1] 2
+> sum(y.vector)
+[1] 22.1
+> 2*1:10
+ [1]  2  4  6  8 10 12 14 16 18 20
+> 2:10
+[1]  2  3  4  5  6  7  8  9 10
+> 3:20
+ [1]  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
+> 5:20
+ [1]  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
+> 2*1:10
+ [1]  2  4  6  8 10 12 14 16 18 20
+> cumsum(x.vector)
+[1]  5.1 11.4 19.2 28.5 39.0
+> cumsum(y6)
+[1]  1  3  6 10 15 21
+> 2ˆ1:5
+Erreur : entr√©e inattendu(e) in "2À"
+> 2ˆ1:5
+Erreur : entr√©e inattendu(e) in "2À"
+> 2+1:5
+[1] 3 4 5 6 7
+> seq(-2*pi,3*pi,pi/4)
+ [1] -6.2831853 -5.4977871 -4.7123890 -3.9269908 -3.1415927 -2.3561945
+ [7] -1.5707963 -0.7853982  0.0000000  0.7853982  1.5707963  2.3561945
+[13]  3.1415927  3.9269908  4.7123890  5.4977871  6.2831853  7.0685835
+[19]  7.8539816  8.6393798  9.4247780
+> pi
+[1] 3.141593
+> rep(1,10)
+ [1] 1 1 1 1 1 1 1 1 1 1
+> rep(1:5,2)
+ [1] 1 2 3 4 5 1 2 3 4 5
+> y<-c(3.1,6.3,2.1,4.4,-1.9)
+> sort(y)
+[1] -1.9  2.1  3.1  4.4  6.3
+> order(y)
+[1] 5 3 1 4 2
+> seq(1,2,10)
+[1] 1
+> seq(1,1,10)
+[1] 1
+> seq(3,1,10)
+Erreur dans seq.default(3, 1, 10) : signe incorrect de l'argument 'by'
+> ?seq
+starting httpd help server ... done
+> seq(1,10,2)
+[1] 1 3 5 7 9
+> y
+[1]  3.1  6.3  2.1  4.4 -1.9
+> y[order(y)]
+[1] -1.9  2.1  3.1  4.4  6.3
+> m2<-matrix(1:12,nrow=3,byrow=T)
+> m2
+     [,1] [,2] [,3] [,4]
+[1,]    1    2    3    4
+[2,]    5    6    7    8
+[3,]    9   10   11   12
+> dim(x.vector)
+NULL
+> im(x2)
+Erreur : impossible de trouver la fonction "im"
+> dim(x2)
+NULL
+> dim(m2)
+[1] 3 4
+> rbind(m1,m2)
+Erreur dans rbind(m1, m2) : objet 'm1' introuvable
+> m1<-matrix(1:12,nrow=3,byrow=F)
+> m1
+     [,1] [,2] [,3] [,4]
+[1,]    1    4    7   10
+[2,]    2    5    8   11
+[3,]    3    6    9   12
+> m2
+     [,1] [,2] [,3] [,4]
+[1,]    1    2    3    4
+[2,]    5    6    7    8
+[3,]    9   10   11   12
+> m1 %*% m2
+Erreur dans m1 %*% m2 : arguments inadéquats
+> m1 %*% t(m2)
+     [,1] [,2] [,3]
+[1,]   70  158  246
+[2,]   80  184  288
+[3,]   90  210  330
+> m1(-2)
+Erreur : impossible de trouver la fonction "m1"
+> m1(,-2)
+Erreur : impossible de trouver la fonction "m1"
+> m1
+     [,1] [,2] [,3] [,4]
+[1,]    1    4    7   10
+[2,]    2    5    8   11
+[3,]    3    6    9   12
+> m1[,-2]
+     [,1] [,2] [,3]
+[1,]    1    7   10
+[2,]    2    8   11
+[3,]    3    9   12
+> m1[3]
+[1] 3
+> my.list<-list("first element"=T, "second element"="Coucou","third"=c(4,3),
++ "fourth"=9.99)
+> my.list[3]
+$third
+[1] 4 3
+
+> my.list[[3]]
+[1] 4 3
+> my.list$'second element'
+[1] "Coucou"
+> my.list$'second'
+[1] "Coucou"
+> my.list$fir
+[1] TRUE
+> my.list
+$`first element`
+[1] TRUE
+
+$`second element`
+[1] "Coucou"
+
+$third
+[1] 4 3
+
+$fourth
+[1] 9.99
+
+> names(my.list)
+[1] "first element"  "second element" "third"          "fourth"        
+> a<-1:12
+> b<-12:1
+> cc<-letters[1:12] #why cc rather than c?
+> > d<-rep(c(TRUE,FALSE),each=6) #careful, T & F are dangerous, use TRUE and FALSE instead
+Erreur : '>' inattendu(e) in ">"
+> > dataf<-data.frame(a,b,cc,d)
+Erreur : '>' inattendu(e) in ">"
+> > dataf
+Erreur : '>' inattendu(e) in ">"
+> > dataf[,2]
+Erreur : '>' inattendu(e) in ">"
+> > dataf$b
+Erreur : '>' inattendu(e) in ">"
+> 
+>  cc<-letters[1:12] #why cc rather than c?
+> d<-rep(c(TRUE,FALSE),each=6) 
+> dataf<-data.frame(a,b,cc,d)
+> dataf
+    a  b cc     d
+1   1 12  a  TRUE
+2   2 11  b  TRUE
+3   3 10  c  TRUE
+4   4  9  d  TRUE
+5   5  8  e  TRUE
+6   6  7  f  TRUE
+7   7  6  g FALSE
+8   8  5  h FALSE
+9   9  4  i FALSE
+10 10  3  j FALSE
+11 11  2  k FALSE
+12 12  1  l FALSE
+> str(dataf)
+'data.frame':	12 obs. of  4 variables:
+ $ a : int  1 2 3 4 5 6 7 8 9 10 ...
+ $ b : int  12 11 10 9 8 7 6 5 4 3 ...
+ $ cc: Factor w/ 12 levels "a","b","c","d",..: 1 2 3 4 5 6 7 8 9 10 ...
+ $ d : logi  TRUE TRUE TRUE TRUE TRUE TRUE ...
+> dataf$a[dataf$d==TRUE]
+[1] 1 2 3 4 5 6
+> lot<-read.table("http://www2.unil.ch/popgen/teaching/R11/lotery.txt",header=TRUE)
+> ??read.table
+> write.table(my.data,"mydata.txt",row.names=FALSE,quote=FALSE,sep="\t")
+Erreur dans is.data.frame(x) : objet 'my.data' introuvable
+> 
+> write.table(dataf,"dataf",row.names=FALSE,quote=FALSE,sep="\t")
+> write.table(dataf,"dataf.txt",row.names=FALSE,quote=FALSE,sep="\t")
+> getwd
+function () 
+.Internal(getwd())
+<bytecode: 0x7fc0ee49a4d0>
+<environment: namespace:base>
+> getwd()
+[1] "/Users/admin"
+> write.table(dataf,"dataf.txt",row.names=FALSE,quote=FALSE,sep="\t")
+> rm(list=ls())
+> ls()
+character(0)
+> a<-c(7.3, 6.8, 0.005, 9, 12, 2.4, 18.9, 0.9)
+> mean(a)
+[1] 7.163125
+> out<-(a-mean(a))
+> out
+[1]  0.136875 -0.363125 -7.158125  1.836875  4.836875 -4.763125 11.736875
+[8] -6.263125
+> sqrt.a<-sqrt(a)
+> sqrt.a
+[1] 2.70185122 2.60768096 0.07071068 3.00000000 3.46410162 1.54919334
+[7] 4.34741302 0.94868330
+> a-sqrt.a
+[1]  4.59814878  4.19231904 -0.06571068  6.00000000  8.53589838  0.85080666
+[7] 14.55258698 -0.04868330
+> print(a>sqrt.a)
+[1]  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE FALSE
+> a[(a>sqrt.a)==TRUE]
+[1]  7.3  6.8  9.0 12.0  2.4 18.9
+> sqrt.a.true<-a[(a>sqrt.a)==TRUE]
+> x<-seq(1:4,4)
+Erreur dans seq.default(1:4, 4) : 'from' doit être de longueur 1
+> ?seq
+> seq(1,4,2)
+[1] 1 3
+> rep(1:2,2)
+[1] 1 2 1 2
+> x<-rep(1:4,4)
+> x
+ [1] 1 2 3 4 1 2 3 4 1 2 3 4 1 2 3 4
+> seq(rep(10:7),1)
+Erreur dans seq.default(rep(10:7), 1) : 'from' doit être de longueur 1
+> seq(rep(10:7,3),1)
+Erreur dans seq.default(rep(10:7, 3), 1) : 'from' doit être de longueur 1
+> seq(10:7,1)
+Erreur dans seq.default(10:7, 1) : 'from' doit être de longueur 1
+> seq(10,7,1)
+Erreur dans seq.default(10, 7, 1) : signe incorrect de l'argument 'by'
+> 10:7*3
+[1] 30 27 24 21
+> rep(10:7,3)
+ [1] 10  9  8  7 10  9  8  7 10  9  8  7
+> order(-rep(10:7,3))
+ [1]  1  5  9  2  6 10  3  7 11  4  8 12
+> order(rep(10:7,3))
+ [1]  4  8 12  3  7 11  2  6 10  1  5  9
+> sort(rep(10:7,3),decreasing=TRUE)
+ [1] 10 10 10  9  9  9  8  8  8  7  7  7
+> y<-sort(rep(10:7,3),decreasing=TRUE)
+> order(y)
+ [1] 10 11 12  7  8  9  4  5  6  1  2  3
+> z = NULL
+> for (i in 1:5){}
+> for (i in 1:5){}
+> for (i in 1:5){z<-rep($i)}
+Erreur : '$' inattendu(e) in "for (i in 1:5){z<-rep($"
+> for (i in 1:5){rep(i,i)}
+> for (i in 1:5){z<-rep(i,i)}
+> z
+[1] 5 5 5 5 5
+> for (i in 1:5){z[i]<-rep(i,i)}
+Messages d'avis :
+1: In z[i] <- rep(i, i) :
+  le nombre d'objets à remplacer n'est pas multiple de la taille du remplacement
+2: In z[i] <- rep(i, i) :
+  le nombre d'objets à remplacer n'est pas multiple de la taille du remplacement
+3: In z[i] <- rep(i, i) :
+  le nombre d'objets à remplacer n'est pas multiple de la taille du remplacement
+4: In z[i] <- rep(i, i) :
+  le nombre d'objets à remplacer n'est pas multiple de la taille du remplacement
+> for (i in 1:5){z[i]=rep(i,i)}
+Messages d'avis :
+1: In z[i] = rep(i, i) :
+  le nombre d'objets à remplacer n'est pas multiple de la taille du remplacement
+2: In z[i] = rep(i, i) :
+  le nombre d'objets à remplacer n'est pas multiple de la taille du remplacement
+3: In z[i] = rep(i, i) :
+  le nombre d'objets à remplacer n'est pas multiple de la taille du remplacement
+4: In z[i] = rep(i, i) :
+  le nombre d'objets à remplacer n'est pas multiple de la taille du remplacement
+> ?rep
+> rep_len(10:7,3)
+[1] 10  9  8
+> rep_len(2,3)
+[1] 2 2 2
+> rep_len(1:3,3)
+[1] 1 2 3
+> rep_len(1:5,4)
+[1] 1 2 3 4
+> rep(10:7,3,each 3)
+Erreur : constante numérique inattendu(e) in "rep(10:7,3,each 3"
+> rep(10:7,3,each3)
+Erreur : objet 'each3' introuvable
+> rep(10:7,3,each=3)
+ [1] 10 10 10  9  9  9  8  8  8  7  7  7 10 10 10  9  9  9  8  8  8  7  7  7 10
+[26] 10 10  9  9  9  8  8  8  7  7  7
+> rep(10:7,1, each=3)
+ [1] 10 10 10  9  9  9  8  8  8  7  7  7
+> rep(1:5,times=3)
+ [1] 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5
+> rep(1:5,1,each=5)
+ [1] 1 1 1 1 1 2 2 2 2 2 3 3 3 3 3 4 4 4 4 4 5 5 5 5 5
+> rep(1:5,each=5)
+ [1] 1 1 1 1 1 2 2 2 2 2 3 3 3 3 3 4 4 4 4 4 5 5 5 5 5
+> rep(1:5,c(1:5))
+ [1] 1 2 2 3 3 3 4 4 4 4 5 5 5 5 5
+> rep(1, 40*(1-.8))
+[1] 1 1 1 1 1 1 1
+> rep(1, 40*(1-.8)+1e-7)
+[1] 1 1 1 1 1 1 1 1
+> rep(1:5*2, each=2)
+ [1]  2  2  4  4  6  6  8  8 10 10
+> seq(1,10,2)
+[1] 1 3 5 7 9
+> rep(seq(1,10,2),each=2)
+ [1] 1 1 3 3 5 5 7 7 9 9
+> ?matrix
+> m1<-matrix(c(3,rep(1,4)), nrow=4, ncol=4, byrow=TRUE)
+Message d'avis :
+In matrix(c(3, rep(1, 4)), nrow = 4, ncol = 4, byrow = TRUE) :
+  la longueur des données [5] n'est pas un diviseur ni un multiple du nombre de lignes [4]
+> m1
+     [,1] [,2] [,3] [,4]
+[1,]    3    1    1    1
+[2,]    1    3    1    1
+[3,]    1    1    3    1
+[4,]    1    1    1    3
+> m1<-matrix(rep(3,rep(1,4),4), nrow=4, ncol=4, byrow=TRUE)
+> m1
+     [,1] [,2] [,3] [,4]
+[1,]    3    3    3    3
+[2,]    3    3    3    3
+[3,]    3    3    3    3
+[4,]    3    3    3    3
+> m1<-matrix(rep(c(3,rep(1,4)),4), nrow=4, ncol=4, byrow=TRUE)
+> m1
+     [,1] [,2] [,3] [,4]
+[1,]    3    1    1    1
+[2,]    1    3    1    1
+[3,]    1    1    3    1
+[4,]    1    1    1    3
+> prod(m1)
+[1] 81
+> m1 %*% m1
+     [,1] [,2] [,3] [,4]
+[1,]   12    8    8    8
+[2,]    8   12    8    8
+[3,]    8    8   12    8
+[4,]    8    8    8   12
+> m1
+     [,1] [,2] [,3] [,4]
+[1,]    3    1    1    1
+[2,]    1    3    1    1
+[3,]    1    1    3    1
+[4,]    1    1    1    3
+> ?solve
+> ls()
+[1] "a"           "i"           "m1"          "out"         "sqrt.a"     
+[6] "sqrt.a.true" "x"           "y"           "z"          
+> p=matrix(c(2,3,-1,5,-10,2,1,1,-4)nrow=3,byrow=TRUE)
+Erreur : symbole inattendu(e) in "p=matrix(c(2,3,-1,5,-10,2,1,1,-4)nrow"
+> p<-matrix(c(2,3,-1,5,-10,2,1,1,-4)nrow=3,byrow=TRUE)
+Erreur : symbole inattendu(e) in "p<-matrix(c(2,3,-1,5,-10,2,1,1,-4)nrow"
+> p<-matrix(c(2,3,-1,5,-10,2,1,1,-4), nrow=3, byrow=TRUE)
+> ?solve
+> q<-matrix(c(4,0,5),bycol=TRUE)
+Erreur dans matrix(c(4, 0, 5), bycol = TRUE) : 
+  argument inutilisé (bycol = TRUE)
+> q<-matrix(c(4,0,5),ncol=1)
+> q
+     [,1]
+[1,]    4
+[2,]    0
+[3,]    5
+> solve(p,q)
+           [,1]
+[1,]  1.0393701
+[2,]  0.3385827
+[3,] -0.9055118
+> q1<-matrix(c(4,0,5))
+> q1
+     [,1]
+[1,]    4
+[2,]    0
+[3,]    5
+> my.list<-("nb1"=c(1:5), "nb3"=seq(1,50,0.375), "char1"="My mummy told me", "char2"=c("apples","bananas","pears"),"bool"=rep((FALSE,TRUE),2,each=3))
+Erreur : ',' inattendu(e) in "my.list<-("nb1"=c(1:5),"
+> my.list<-("nb1"=1:5, "nb3"=seq(1,50,0.375), "char1"="My mummy told me", "char2"=c("apples","bananas","pears"),"bool"=rep((FALSE,TRUE),2,each=3))
+Erreur : ',' inattendu(e) in "my.list<-("nb1"=1:5,"
+> my.list<-("nb1"=(1:5), "nb3"=seq(1,50,0.375), "char1"="My mummy told me", "char2"=c("apples"...=,"bananas","pears"),"bool"=rep((FALSE,TRUE),2,each=3))
+> c(1:5)
+[1] 1 2 3 4 5
+> my.list<-list("nb1"=c(1:5), "nb3"=seq(1,50,0.375), "char1"="My mummy told me", "char2"=c("apples","bananas","pears"),"bool"=rep((FALSE,TRUE),2,each=3))
+Erreur : ',' inattendu(e) in "my.list<-list("nb1"=c(1:5), "nb3"=seq(1,50,0.375), "char1"="My mummy told me", "char2"=c("apples","bananas","pears"),"bool"=rep((FALSE,"
+> my.list<-list("nb1"=c(1:5), "nb3"=seq(1,50,0.375), "char1"="My mummy told me", "char2"=c("apples","bananas","pears"),"bool"=rep((FALSE,TRUE),2,each=3))
+Erreur : ',' inattendu(e) in "my.list<-list("nb1"=c(1:5), "nb3"=seq(1,50,0.375), "char1"="My mummy told me", "char2"=c("apples","bananas","pears"),"bool"=rep((FALSE,"
+> seq(1,50,0.375)
+  [1]  1.000  1.375  1.750  2.125  2.500  2.875  3.250  3.625  4.000  4.375
+ [11]  4.750  5.125  5.500  5.875  6.250  6.625  7.000  7.375  7.750  8.125
+ [21]  8.500  8.875  9.250  9.625 10.000 10.375 10.750 11.125 11.500 11.875
+ [31] 12.250 12.625 13.000 13.375 13.750 14.125 14.500 14.875 15.250 15.625
+ [41] 16.000 16.375 16.750 17.125 17.500 17.875 18.250 18.625 19.000 19.375
+ [51] 19.750 20.125 20.500 20.875 21.250 21.625 22.000 22.375 22.750 23.125
+ [61] 23.500 23.875 24.250 24.625 25.000 25.375 25.750 26.125 26.500 26.875
+ [71] 27.250 27.625 28.000 28.375 28.750 29.125 29.500 29.875 30.250 30.625
+ [81] 31.000 31.375 31.750 32.125 32.500 32.875 33.250 33.625 34.000 34.375
+ [91] 34.750 35.125 35.500 35.875 36.250 36.625 37.000 37.375 37.750 38.125
+[101] 38.500 38.875 39.250 39.625 40.000 40.375 40.750 41.125 41.500 41.875
+[111] 42.250 42.625 43.000 43.375 43.750 44.125 44.500 44.875 45.250 45.625
+[121] 46.000 46.375 46.750 47.125 47.500 47.875 48.250 48.625 49.000 49.375
+[131] 49.750
+> rep((FALSE,TRUE),2,each=3)
+Erreur : ',' inattendu(e) in "rep((FALSE,"
+> rep((FALSE,TRUE), each=3)
+Erreur : ',' inattendu(e) in "rep((FALSE,"
+> ?rep
+> rep((FALSE,TRUE), each = 3)
+Erreur : ',' inattendu(e) in "rep((FALSE,"
+> rep(c(FALSE,TRUE), each = 3)
+[1] FALSE FALSE FALSE  TRUE  TRUE  TRUE
+> rep(c(FALSE,TRUE), 2, each = 3)
+ [1] FALSE FALSE FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE  TRUE  TRUE  TRUE
+> my.list<-list("nb1"=c(1:5), "nb3"=seq(1,50,0.375), "char1"="My mummy told me", "char2"=c("apples","bananas","pears"),"bool"=rep(c(FALSE,TRUE),2,each=3))
+> str(my.list)
+List of 5
+ $ nb1  : int [1:5] 1 2 3 4 5
+ $ nb3  : num [1:131] 1 1.38 1.75 2.12 2.5 ...
+ $ char1: chr "My mummy told me"
+ $ char2: chr [1:3] "apples" "bananas" "pears"
+ $ bool : logi [1:12] FALSE FALSE FALSE TRUE TRUE TRUE ...
+> length(my.list)
+[1] 5
+> mean(my.list$nb1)
+[1] 3
+> mean(my.list$nb3)
+[1] 25.375
+> mean(my.list$nb1,my.list$nb3)
+Erreur dans mean.default(my.list$nb1, my.list$nb3) : 
+  'trim' doit être une valeur numérique de longueur un
+> mean(m1,q)
+Erreur dans mean.default(m1, q) : 
+  'trim' doit être une valeur numérique de longueur un
+> ?mean
+> mean(c(my.list$nb1,my.list$nb3))
+[1] 24.55239
+> paste(c(my.list$char1, my.list$char2))
+[1] "My mummy told me" "apples"           "bananas"          "pears"           
+> my.list$char2[1:3]
+[1] "apples"  "bananas" "pears"  
+> ?paste
+> ?print
+> print(c(my.list$char1, my.list$char2), quotes=FALSE)
+[1] "My mummy told me" "apples"           "bananas"          "pears"           
+> print(c(my.list$char1, my.list$char2), quote=FALSE)
+[1] My mummy told me apples           bananas          pears           
+> paste(c(my.list$char1, my.list$char2), quote=FALSE)
+[1] "My mummy told me FALSE" "apples FALSE"           "bananas FALSE"         
+[4] "pears FALSE"           
+> paste(c(my.list$char1, my.list$char2))
+[1] "My mummy told me" "apples"           "bananas"          "pears"           
+> paste(c(my.list$char1, my.list$char2), sep='')
+[1] "My mummy told me" "apples"           "bananas"          "pears"           
+> paste(c(my.list$char1, my.list$char2), collapse='')
+[1] "My mummy told meapplesbananaspears"
+> paste((my.list$char1, my.list$char2), collapse='')
+Erreur : ',' inattendu(e) in "paste((my.list$char1,"
+> paste(c(my.list$char1, my.list$char2), collapse=' ', sep=",")
+[1] "My mummy told me apples bananas pears"
+> paste(c(my.list$char1, collapse=': ', my.list$char2, collapse=' ', sep=",")
++ 
+> paste(my.list$char1, collapse=': ', my.list$char2, collapse=' ', sep=",")
+Erreur dans paste(my.list$char1, collapse = ": ", my.list$char2, collapse = " ",  : 
+  argument formel "collapse" correspondant à plusieurs arguments fournis
+> paste(my.list$char1, sep=':', my.list$char2[1:3], sep=",")
+Erreur dans paste(my.list$char1, sep = ":", my.list$char2[1:3], sep = ",") : 
+  argument formel "sep" correspondant à plusieurs arguments fournis
+> paste(my.list$char1, sep=':', my.list$char2, sep=",")
+Erreur dans paste(my.list$char1, sep = ":", my.list$char2, sep = ",") : 
+  argument formel "sep" correspondant à plusieurs arguments fournis
+> paste(c(my.list$char1), sep=':', c(my.list$char2), sep=",")
+Erreur dans paste(c(my.list$char1), sep = ":", c(my.list$char2), sep = ",") : 
+  argument formel "sep" correspondant à plusieurs arguments fournis
+> parus1<-read.table("http://www2.unil.ch/popgen/teaching/R11", header=TRUE)
+Erreur dans scan(file, what, nmax, sep, dec, quote, skip, nlines, na.strings,  : 
+  la ligne 2 n'avait pas 2 éléments
+> parus1<-read.table("http://www2.unil.ch/popgen/teaching/R11/parus1.txt", header=TRUE)
+> head(parus1)
+     treat   alldat
+1 controle 20.52171
+2 controle 17.47946
+3 controle 16.20145
+4 controle 17.92205
+5 controle 20.07814
+6 controle 18.40633
+> ??data.frame
+> p1<-data.frame(parus1)
+> head(p1)
+     treat   alldat
+1 controle 20.52171
+2 controle 17.47946
+3 controle 16.20145
+4 controle 17.92205
+5 controle 20.07814
+6 controle 18.40633
+> data.fly<-p1[,2]
+> data.fly<-p1["mouche",2]
+> head(data.fly)
+[1] NA
+> p1$alldat
+ [1] 20.52171 17.47946 16.20145 17.92205 20.07814 18.40633 19.15195 17.05217
+ [9] 18.37986 16.97040 17.86359 15.58035 16.95975 17.78887 16.81124 17.43927
+[17] 14.16337 13.96219 19.26847 14.50758 13.48999 14.47517 13.34007 10.17779
+[25] 18.35268 14.63451 11.77795 17.16397 12.14771 13.43267
+> data.fly<-p1$all[p1$tre=="mouche"]
+> head(data.fly)
+[1] 17.86359 15.58035 16.95975 17.78887 16.81124 17.43927
+> p2<-c(p1,"puce", 12.7300)
+> tail(p2)
+$treat
+ [1] controle controle controle controle controle controle controle controle
+ [9] controle controle mouche   mouche   mouche   mouche   mouche   mouche  
+[17] mouche   mouche   mouche   mouche   puce     puce     puce     puce    
+[25] puce     puce     puce     puce     puce     puce    
+Levels: controle mouche puce
+
+$alldat
+ [1] 20.52171 17.47946 16.20145 17.92205 20.07814 18.40633 19.15195 17.05217
+ [9] 18.37986 16.97040 17.86359 15.58035 16.95975 17.78887 16.81124 17.43927
+[17] 14.16337 13.96219 19.26847 14.50758 13.48999 14.47517 13.34007 10.17779
+[25] 18.35268 14.63451 11.77795 17.16397 12.14771 13.43267
+
+[[3]]
+[1] "puce"
+
+[[4]]
+[1] 12.73
+
+> p2
+$treat
+ [1] controle controle controle controle controle controle controle controle
+ [9] controle controle mouche   mouche   mouche   mouche   mouche   mouche  
+[17] mouche   mouche   mouche   mouche   puce     puce     puce     puce    
+[25] puce     puce     puce     puce     puce     puce    
+Levels: controle mouche puce
+
+$alldat
+ [1] 20.52171 17.47946 16.20145 17.92205 20.07814 18.40633 19.15195 17.05217
+ [9] 18.37986 16.97040 17.86359 15.58035 16.95975 17.78887 16.81124 17.43927
+[17] 14.16337 13.96219 19.26847 14.50758 13.48999 14.47517 13.34007 10.17779
+[25] 18.35268 14.63451 11.77795 17.16397 12.14771 13.43267
+
+[[3]]
+[1] "puce"
+
+[[4]]
+[1] 12.73
+
+> p1
+      treat   alldat
+1  controle 20.52171
+2  controle 17.47946
+3  controle 16.20145
+4  controle 17.92205
+5  controle 20.07814
+6  controle 18.40633
+7  controle 19.15195
+8  controle 17.05217
+9  controle 18.37986
+10 controle 16.97040
+11   mouche 17.86359
+12   mouche 15.58035
+13   mouche 16.95975
+14   mouche 17.78887
+15   mouche 16.81124
+16   mouche 17.43927
+17   mouche 14.16337
+18   mouche 13.96219
+19   mouche 19.26847
+20   mouche 14.50758
+21     puce 13.48999
+22     puce 14.47517
+23     puce 13.34007
+24     puce 10.17779
+25     puce 18.35268
+26     puce 14.63451
+27     puce 11.77795
+28     puce 17.16397
+29     puce 12.14771
+30     puce 13.43267
+> p2<-c(p1,("puce", 12.7300))
+Erreur : ',' inattendu(e) in "p2<-c(p1,("puce","
+> p'=c("puce", 12.7300)
++ 
+> p0=c("puce", 12.7300)
+> p2=rbind(p1,p2)
+Erreur dans rbind(deparse.level, ...) : 
+  liste d'arguments incorrecte : toutes les variables doivent avoir la même longueur
+> p2=rbind(p1,p0)
+> p2
+      treat   alldat
+1  controle 20.52171
+2  controle 17.47946
+3  controle 16.20145
+4  controle 17.92205
+5  controle 20.07814
+6  controle 18.40633
+7  controle 19.15195
+8  controle 17.05217
+9  controle 18.37986
+10 controle  16.9704
+11   mouche 17.86359
+12   mouche 15.58035
+13   mouche 16.95975
+14   mouche 17.78887
+15   mouche 16.81124
+16   mouche 17.43927
+17   mouche 14.16337
+18   mouche 13.96219
+19   mouche 19.26847
+20   mouche 14.50758
+21     puce 13.48999
+22     puce 14.47517
+23     puce 13.34007
+24     puce 10.17779
+25     puce 18.35268
+26     puce 14.63451
+27     puce 11.77795
+28     puce 17.16397
+29     puce 12.14771
+30     puce 13.43267
+31     puce    12.73
+> alien<-read.table("http://www2.unil.ch/popgen/teaching/R11/alien.txt", headers=TRUE)
+Erreur dans read.table("http://www2.unil.ch/popgen/teaching/R11/alien.txt",  : 
+  argument inutilisé (headers = TRUE)
+> ??read.table
+> alien<-read.table("http://www2.unil.ch/popgen/teaching/R11/alien.txt", header=TRUE, quote = "\"'?")
+Erreur dans scan(file, what, nmax, sep, dec, quote, skip, nlines, na.strings,  : 
+  la ligne 1 n'avait pas 6 éléments
+> alien<-read.table("http://www2.unil.ch/popgen/teaching/R11/alien.txt", header=TRUE, quote = "\"'?()")
+Erreur dans scan(file, what, nmax, sep, dec, quote, skip, nlines, na.strings,  : 
+  la ligne 1 n'avait pas 5 éléments
+> alien<-read.table("http://www2.unil.ch/popgen/teaching/R11/alien.txt", header=TRUE)
+Erreur dans scan(file, what, nmax, sep, dec, quote, skip, nlines, na.strings,  : 
+  la ligne 1 n'avait pas 6 éléments
+> alien<-read.table("http://www2.unil.ch/popgen/teaching/R11/alien.txt", header=TRUE, stringsAsFactors)
+Erreur dans read.table("http://www2.unil.ch/popgen/teaching/R11/alien.txt",  : 
+  objet 'stringsAsFactors' introuvable
+> alien<-read.table("http://www2.unil.ch/popgen/teaching/R11/alien.txt", header=TRUE, stringsAsFactors = default.stringsAsFactors())
+Erreur dans scan(file, what, nmax, sep, dec, quote, skip, nlines, na.strings,  : 
+  la ligne 1 n'avait pas 6 éléments
+> alien<-read.table("http://www2.unil.ch/popgen/teaching/R11/alien.txt", header=TRUE, stringsAsFactors = default.stringsAsFactors(), quote = "\"'?")
+Erreur dans scan(file, what, nmax, sep, dec, quote, skip, nlines, na.strings,  : 
+  la ligne 1 n'avait pas 6 éléments
+> alien<-read.table("http://www2.unil.ch/popgen/teaching/R11/alien.txt", header=TRUE, stringsAsFactors = default.stringsAsFactors(), quote = "\"'?")
+> getwd
+function () 
+.Internal(getwd())
+<bytecode: 0x7fc0ee49a4d0>
+<environment: namespace:base>
+> getwd()
+[1] "/Users/admin/Documents/SNAREing/Courses/R-Introduction/Day1"
+> alien<-read.table("alien.txt", header=TRUE)
+Erreur dans scan(file, what, nmax, sep, dec, quote, skip, nlines, na.strings,  : 
+  la ligne 1 n'avait pas 6 éléments
+> alien
+Erreur : objet 'alien' introuvable
+> alien<-read.table("alien.txt", header=TRUE)
+Erreur dans scan(file, what, nmax, sep, dec, quote, skip, nlines, na.strings,  : 
+  la ligne 1 n'avait pas 6 éléments
+> alien<-read.table("alien.txt", header=TRUE)
+> alien
+   sexe        poids para  coul
+1     F 1.822538e-01    1 Black
+2     F 9.907006e+00    0   Red
+3     F 1.151585e+01    0 Black
+4     F 8.755951e+00    2 Black
+5     F 8.925456e-01    1   Red
+6     M 3.737870e+00    4 Black
+7     F 1.706093e+00    0 Black
+8     M 2.580768e+00    3 Black
+9     F 3.061176e-01    2   Red
+10    M 6.475433e-01    5 Black
+11    M 1.801158e+00    0 Black
+12    F 9.541018e-01    2   Red
+13    U 9.054531e+00    1   Red
+14    M 3.271304e-01    4 Black
+15    F 4.927262e+00    0   Red
+16    M 4.246183e+01    1   Red
+17    M 3.494522e-01    6 Black
+18    U 2.559967e+00    2   Red
+19    M 1.498270e-01    4   Red
+20    F 4.332217e+02    0 Black
+21    F 8.437513e-01    5   Red
+22    F 1.724053e+00   NA Black
+23    F 5.455804e+00    3   Red
+24    F 6.235896e-01    2   Red
+25    F 2.840801e+00    3   Red
+26    F 4.224708e-01    4 Black
+27    F 1.292580e+00    1 Black
+28    M 4.040600e+00    5 Black
+29    M 2.298748e+01    1 Black
+30    F 3.019504e+00    0 Black
+31    U 2.941696e+00    1 Black
+32    M 5.761498e+00    1 Black
+33    F 6.888788e-01    2 Black
+34    M 6.844601e+00    4 Black
+35    F 7.942076e-03    0 Black
+36    F 2.298727e-01    0   Red
+37    M 3.662293e+00    7 Black
+38    M 4.666572e-01    2 Black
+39    F 1.028764e+00    1 Black
+40    M 1.987534e-01    5 Black
+41    F 1.638225e+01    1   Red
+42 <NA> 9.066225e+01   NA   Red
+43 <NA> 1.738758e+02    1   Red
+44    M 1.622921e+00    3 Black
+45    F 1.020850e+00    0   Red
+46    F 4.702617e+00    3 Black
+47    M 1.673511e+01    6 Black
+48    M 4.300114e+00    7   Red
+49    F 3.170141e+00    4   Red
+50    M 4.742233e+00    2 Black
+51    M 4.641627e+01    2 Black
+52    F 2.906301e+00    3   Red
+53    F 1.069498e+00    1 Black
+54    F 1.632731e+00    0   Red
+55    M 5.043148e+00    5 Black
+56    M 6.964109e-01    1 Black
+57    M 1.142153e+00    2 Black
+58    F 1.389174e+02    4   Red
+59    F 7.415987e-02    3   Red
+60    F 1.002072e+01    2   Red
+61    F 4.083385e+00    2 Black
+62    M 9.810174e+01    3 Black
+63    M 1.038722e+00    1 Black
+64    F 6.304088e-01    4 Black
+65    F 3.638852e+00    2   Red
+> alien<-read.table("http://www2.unil.ch/popgen/teaching/R11/class2005.txt", header=TRUE)
+Erreur dans file(file, "rt") : impossible d'ouvrir la connexion
+De plus : Message d'avis :
+In file(file, "rt") : connexion à 'www2.unil.ch' impossible sur le port 80.
+connect: Network is unreachable
+> alien<-read.table("http://www2.unil.ch/popgen/teaching/R11/class2005.txt", header=TRUE)
+> alien
+   sex size weight shoesize eyecol haircol hairlen smoker
+1    M  179     69       44  green   blond   5.000      n
+2    M  180     75       43  brown    fair   1.000      n
+3    M  183     75       45  brown    fair   4.000      n
+4    M  187     75       46  green    fair   2.000      n
+5    M  182     79       43  green    fair   5.000      n
+6    M  193     73       43   blue    fair   5.000      y
+7    F  154     47       38   blue   brown  10.000      n
+8    M  173     61       40  brown   black   2.000      y
+9    F  162     58       38  brown    fair  30.000      n
+10   F  162     50       37  brown    fair  50.000      n
+11   M  174     56       42  brown    fair   3.000      n
+12   F  166     55       38  brown    fair  45.000      y
+13   F  172     53       38  brown    fair  20.000      y
+14   F  170     60       39   blue   blond  40.000      n
+15   F  166     52       38  brown    fair  25.000      n
+16   M  180     65       43  green   black   5.000      n
+17   F  167     56       39  brown  ginger  40.000      n
+18   F  155     42       36  brown   black  25.000      n
+19   F  169     60       39  brown   blond  35.000      n
+20   F  169     50       38  brown   brown  15.000      n
+21   M  182     75       43  brown    fair  10.000      n
+22   M  181     71       43  brown   black   5.000      n
+23   M   NA     76       44  black    <NA>   5.000      n
+24   F  162     52       37  brown    fair  40.000      n
+25   M  167     60       42  brown    fair   3.000      y
+26   F  163     58       37  brown   brown   6.000      n
+27   M  174     76       44  brown    fair   0.300      y
+28   M  174     75       42  brown    fair   2.000      y
+29   M  170     80       42   blue  ginger   1.000      y
+30   M  174     60       42   blue   blond  10.000      n
+31   M  170     70       42  brown    fair   4.500      n
+32   F  169     59       38  brown    fair  20.000      n
+33   F  163     58       39  brown    fair  40.000      y
+34   F  156     NA       37  green    <NA>      NA      n
+35   M  182     82       43  brown   blond   7.700      y
+36   M  182     72       45   blue   blond   5.354      n
+37   F  166     51       39  brown   brown  45.000      n
+38   M  185     74       48  brown   brown   0.200      n
+39   F  165     62       39   blue    fair  20.000      n
+40   M  170     78       43   blue   brown   5.000      n
+41   F  165     NA       NA   blue   blond      NA      y
+42   M  175     60       42  brown    fair  69.000      y
+43   M  186     62       44   blue    fair  18.000      y
+44   M  182     69       41  green    fair   8.000      n
+45   F  163     56       39   blue   blond  40.000      y
+46   F  175     50       39   blue   blond  50.000      n
+47   M  175     75       42   blue   blond  40.000      y
+48   M  176     65       42  brown    fair  40.000      n
+49   M  186     78       45   blue    fair   5.000      n
+50   M  178     70       44  brown   black   0.500      n
+51   M  175     68       43  brown    fair  50.000      y
+> 
